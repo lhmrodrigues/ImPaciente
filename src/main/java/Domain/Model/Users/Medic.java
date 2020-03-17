@@ -5,7 +5,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Medic {
+public class Medic extends User{
 
     //PROPERTIES
     private String crm;
