@@ -16,10 +16,7 @@ public abstract class BaseRepository<T extends Entity> extends HibernateContext 
             Query query = session.createQuery("FROM " + entity.getSimpleName());
             return (List<T>) query.getResultList();
 
-        } catch (Exception e){
-            throw e;
-        }
-        finally {
+        } finally {
             if (session != null && session.isOpen()) {
                 session.close();
             }
