@@ -8,7 +8,7 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public abstract class BaseRepository<T extends Entity> extends HibernateContext implements IBaseRepository<T> {
+public class BaseRepository<T extends Entity> extends HibernateContext implements IBaseRepository<T> {
 
     public List<T> getAll(Class<T> entity) throws Exception{
         Session session = getSession();
