@@ -5,7 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateContext {
-
     private static HibernateContext INSTANCE = null;
 
     public static HibernateContext getInstance(){
@@ -22,8 +21,8 @@ public class HibernateContext {
         this.sessionFactory = sessionFactory;
     }
 
-    protected Session getSession() {
-        return sessionFactory.getCurrentSession();
+    public Session getSession() {
+        return sessionFactory.openSession();
     }
 
     public HibernateContext(){

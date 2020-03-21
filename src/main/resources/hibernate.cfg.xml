@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:mydb.db</property>
+        <property name="connection.username"/>
+        <property name="connection.password"/>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="Domain.Model.Medicine.Medicine"/>
+        <mapping class="Domain.Model.Prescription.Prescription"/>
+        <mapping class="Domain.Model.Users.Patient"/>
+        <mapping class="Domain.Model.Users.Medic"/>
+        <mapping class="Domain.Model.Users.User"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -8,10 +8,10 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class BaseRepository<T extends Entity> extends HibernateContext implements IBaseRepository<T> {
+public class BaseRepository<T extends Entity>  implements IBaseRepository<T> {
 
     public List<T> getAll(Class<T> entity) throws Exception{
-        Session session = getSession();
+        Session session = HibernateContext.getInstance().getSession();
         try {
             Query query = session.createQuery("FROM " + entity.getSimpleName());
             return (List<T>) query.getResultList();
@@ -24,7 +24,7 @@ public class BaseRepository<T extends Entity> extends HibernateContext implement
     }
 
     public T getById(int id) throws Exception {
-        Session session = getSession();
+        Session session = HibernateContext.getInstance().getSession();
 
         try {
             session.getTransaction().begin();
@@ -37,7 +37,7 @@ public class BaseRepository<T extends Entity> extends HibernateContext implement
     }
 
     public T add(T entity) throws Exception {
-        Session session = getSession();
+        Session session = HibernateContext.getInstance().getSession();
 
         try {
             session.getTransaction().begin();
@@ -52,7 +52,7 @@ public class BaseRepository<T extends Entity> extends HibernateContext implement
     }
 
     public void update(T entity) throws Exception {
-        Session session = getSession();
+        Session session = HibernateContext.getInstance().getSession();
         try {
             session.getTransaction().begin();
             session.update(entity);
@@ -65,7 +65,7 @@ public class BaseRepository<T extends Entity> extends HibernateContext implement
     }
 
     public void delete(T entity) throws Exception {
-        Session session = getSession();
+        Session session = HibernateContext.getInstance().getSession();
         try {
             session.getTransaction().begin();
             session.delete(entity);
