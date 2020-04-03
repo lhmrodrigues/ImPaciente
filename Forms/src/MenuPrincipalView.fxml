@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuPrincipalView">
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Domain.Controller.Menu.Cmenu">
     <children>
         <Text fill="WHITE" layoutX="88.0" layoutY="119.0" strokeMiterLimit="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient" textAlignment="CENTER" wrappingWidth="274.0">
             <font>
@@ -17,20 +17,20 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button id="btnDoutor" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Paciente" textFill="WHITE">
+        <Button fx:id="btnDoutor" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Paciente" textFill="WHITE"  onAction="#BtnDoutorClick">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Button>
-      <Button id="btnPaciente" fx:id="btnDoutor" layoutX="42.0" layoutY="383.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Doutor" textFill="WHITE">
+      <Button fx:id="btnPaciente"  layoutX="42.0" layoutY="383.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Doutor" textFill="WHITE" onAction="#BtnPacienteClick">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Text id="btnCadastrar" fill="#ffce54" layoutX="173.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre-se">
+      <Button fx:id="btnCadastrar"  layoutX="173.0" layoutY="538.0"  text="Cadastre-se" onAction="#BtnCadastrarClick">
          <font>
             <Font size="20.0" />
          </font>
-      </Text>
+      </Button>
     </children>
 </AnchorPane>
