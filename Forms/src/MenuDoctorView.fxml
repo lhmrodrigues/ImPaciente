@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuDoctorView">
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Domain.Controller.Menu.CmenuDoctor">
    <children>
       <Text fill="WHITE" layoutX="88.0" layoutY="119.0" strokeMiterLimit="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient" textAlignment="CENTER" wrappingWidth="274.0">
          <font>
             <Font size="48.0" />
          </font>
       </Text>
-      <TextField id="txtCRM" alignment="TOP_LEFT" layoutX="42.0" layoutY="363.0" prefHeight="40.0" prefWidth="374.0" promptText="CRM do Doutor" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="363.0">
+      <TextField fx:id="txtCRM" alignment="TOP_LEFT" layoutX="42.0" layoutY="363.0" prefHeight="40.0" prefWidth="374.0" promptText="CRM do Doutor" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="363.0">
          <font>
             <Font size="17.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button id="btnEntrar" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Entrar" textFill="WHITE">
+      <Button fx:id="btnEntrar" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Entrar" textFill="WHITE" onAction="#BtnEntrarClick">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
