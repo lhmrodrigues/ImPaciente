@@ -10,7 +10,6 @@ public class Main {
         System.out.println("Started");
         PatientApp userApp = new PatientApp();
         Patient patient = new Patient();
-        patient.setAge(10);
         patient.setCpf("42188612850");
         patient.setName("Douglas");
         userApp.Add(patient);

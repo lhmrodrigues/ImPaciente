@@ -7,6 +7,7 @@ import Domain.Shared.Entity;
 
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.Date;
 import java.util.List;
 
 @javax.persistence.Entity
@@ -22,6 +23,7 @@ public class Prescription extends Entity {
     @OneToMany
     private List<Medicine> medicineList;
 
+    private Date dateCreated;
 
     //GETTERS AND SETTERS
     public Medic getMedic() {
@@ -46,5 +48,13 @@ public class Prescription extends Entity {
 
     public void setMedicineList(List<Medicine> medicineList) {
         this.medicineList = medicineList;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }
