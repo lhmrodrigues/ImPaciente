@@ -14,7 +14,7 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Alterar Receita" textFill="WHITE">
+        <Button id="btnAlterar" fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Alterar Receita" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -35,15 +35,20 @@
                 <Font size="39.0" />
             </font>
         </Text>
-        <Text fill="#ffce54" layoutX="26.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID da Receita">
+        <Text fill="#ffce54" layoutX="26.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar Receita">
             <font>
                 <Font size="15.0" />
             </font>
         </Text>
-        <TextField fx:id="txtNome" layoutX="25.0" layoutY="122.0" prefHeight="34.0" prefWidth="400.0">
+        <TextField id="txtIdReceita" fx:id="txtNome" layoutX="25.0" layoutY="122.0" prefHeight="34.0" prefWidth="343.0" promptText="Id da Receita">
             <font>
                 <Font size="15.0" />
             </font>
         </TextField>
+      <Button id="btnPesquisar" fx:id="btnEntrar1" layoutX="375.0" layoutY="119.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="55.0" style="-fx-background-color: #FF7F50;" text="OK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -14,7 +13,7 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar-se" textFill="WHITE" onAction="#BtnCadastroClick">
+        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnCadastroClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar-se" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -49,10 +48,15 @@
                 <Font size="15.0" />
             </font>
         </TextField>
-      <CheckBox fx:id="checkBox" layoutX="267.0" layoutY="290.0" mnemonicParsing="false" text="Você é um médico?" textFill="#ffce54">
+      <Text fill="#ffce54" layoutX="25.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
          <font>
             <Font size="15.0" />
          </font>
-      </CheckBox>
+      </Text>
+      <TextField fx:id="txtSenha" layoutX="24.0" layoutY="326.0" prefHeight="34.0" prefWidth="400.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>

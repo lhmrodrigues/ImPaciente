@@ -6,16 +6,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.CinfosPaciente">
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InfosReceita">
     <children>
         <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
             <font>
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button id="btnOk" fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="OK" textFill="WHITE">
+        <Button fx:id="btnConfirmar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnConfirmarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Confirmar Receita" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="21.0" />
             </font>
         </Button>
       <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
@@ -23,7 +23,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="#ffce54" layoutX="25.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Receitas">
+      <Text fill="#ffce54" layoutX="25.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicamento da Receita">
          <font>
             <Font size="15.0" />
          </font>
@@ -33,6 +33,6 @@
             <Font size="39.0" />
          </font>
       </Text>
-      <ListView id="listViewReceitas" layoutX="26.0" layoutY="124.0" prefHeight="392.0" prefWidth="400.0" />
+      <ListView fx:id="listaMedicamentos" layoutX="25.0" layoutY="121.0" prefHeight="402.0" prefWidth="400.0" />
     </children>
 </AnchorPane>
