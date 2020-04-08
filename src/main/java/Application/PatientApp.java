@@ -19,6 +19,7 @@ public class PatientApp extends BaseApp<Patient> implements IPatientApp {
             throw new Exception("CPF e/ou senha inválidos");
         }
         else{
+            UserSession.getInstance().setUserLogado(sqlPacient);
             return sqlPacient;
         }
     }

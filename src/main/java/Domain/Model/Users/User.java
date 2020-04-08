@@ -11,6 +11,7 @@ public abstract class User extends Entity {
 
     //PROPERTIES
     private String name;
+    private String cpfCrm;
     private String password;
 
     //GETTERS AND SETTERS
@@ -28,5 +29,13 @@ public abstract class User extends Entity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCpfCrm() {
+        return cpfCrm;
+    }
+
+    public void setCpfCrm(String cpfCrm) {
+        this.cpfCrm = cpfCrm;
     }
 }

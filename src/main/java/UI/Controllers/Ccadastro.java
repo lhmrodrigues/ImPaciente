@@ -24,7 +24,7 @@ public class Ccadastro {
         {
             MedicApp save = new MedicApp();
             Medic novoUsuario = new Medic();
-            novoUsuario.setCrm(doc);
+            novoUsuario.setCpfCrm(doc);
             novoUsuario.setName(nome);
             save.Add(novoUsuario);
         }
@@ -32,7 +32,7 @@ public class Ccadastro {
         {
             PatientApp save = new PatientApp();
             Patient novoUsuario = new Patient();
-            novoUsuario.setCpf(doc);
+            novoUsuario.setCpfCrm(doc);
             novoUsuario.setName(nome);
             save.Add(novoUsuario);
         }

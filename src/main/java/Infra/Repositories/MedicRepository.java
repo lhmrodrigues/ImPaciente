@@ -12,8 +12,8 @@ public class MedicRepository extends BaseRepository<Medic> implements IMedicRepo
     public Medic medicByCRM(Medic medic) {
         Session session = HibernateContext.getInstance().getSession();
         try {
-            Query query = session.createQuery("FROM Medic WHERE crm = :crm");
-            query.setParameter("crm", medic.getCrm());
+            Query query = session.createQuery("FROM Medic WHERE cpfCrm = :crm");
+            query.setParameter("crm", medic.getCpfCrm());
             return (Medic) query.uniqueResult();
         } catch (Exception e) {
             throw e;

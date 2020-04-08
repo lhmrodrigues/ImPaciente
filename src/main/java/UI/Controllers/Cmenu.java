@@ -36,18 +36,18 @@ public class Cmenu extends CBase{
 
             if (txtUsuario.getText().length() == 11) {
                 Patient patient = new Patient();
-                patient.setCpf(txtUsuario.getText());
+                patient.setCpfCrm(txtUsuario.getText());
                 patient.setPassword(txtSenha.getText());
 
                 PatientApp patientApp = new PatientApp();
                 patientApp.patientLogin(patient);
 
                 Stage primaryStage = new Stage();
-                OpenPage("InfosPacienteView.fxml", primaryStage);
+                OpenPage("InfoReceitaView.fxml", primaryStage);
             }
             else{
                 Medic medic = new Medic();
-                medic.setCrm(txtUsuario.getText());
+                medic.setCpfCrm(txtUsuario.getText());
                 medic.setPassword(txtSenha.getText());
 
                 MedicApp medicApp = new MedicApp();

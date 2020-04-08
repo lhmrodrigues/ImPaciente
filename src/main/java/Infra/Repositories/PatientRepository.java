@@ -11,8 +11,8 @@ public class PatientRepository extends BaseRepository<Patient> implements IPatie
     public Patient patientByCPF(Patient patient) {
         Session session = HibernateContext.getInstance().getSession();
         try {
-            Query query = session.createQuery("FROM Patient WHERE cpf = :cpf");
-            query.setParameter("cpf", patient.getCpf());
+            Query query = session.createQuery("FROM Patient WHERE cpfCrm = :cpf");
+            query.setParameter("cpf", patient.getCpfCrm());
             return (Patient) query.uniqueResult();
         } catch (Exception e) {
             throw e;
