@@ -18,7 +18,7 @@ public class Cmenu extends CBase{
     public TextField txtUsuario;
 
     public void BtnEntrarClick() throws IOException {
-        
+
         Stage primaryStage = new Stage();
         OpenPage(".fxml",primaryStage);
     }
