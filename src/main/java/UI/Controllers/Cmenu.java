@@ -4,35 +4,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 
 
 import java.io.IOException;
 
-public class Cmenu {
+public class Cmenu extends CBase{
 
-    public Button btnDoutor;
-    public Button btnPaciente;
+    public Button btnEntrar;
     public Button btnCadastrar;
+    public TextField txtUsuario;
 
-    public void RunMenu( String formName,Stage primaryStage) throws IOException {
-        primaryStage.setTitle(formName);
-        Parent root = FXMLLoader.load(getClass().getResource("/Views/"+formName));
-        primaryStage.setTitle(formName);
-        primaryStage.setScene(new Scene(root,300,300));
-        primaryStage.show();
+    public void BtnEntrarClick() throws IOException {
+        
+        Stage primaryStage = new Stage();
+        OpenPage(".fxml",primaryStage);
     }
 
-    public void BtnDoutorClick() throws IOException {
-        Stage primaryStage = new Stage();
-        RunMenu("MenuDoctorView.fxml",primaryStage);
-    }
-    public void BtnPacienteClick() throws IOException {
-        Stage primaryStage = new Stage();
-        RunMenu("MenuPacienteView.fxml",primaryStage);
-    }
     public void BtnCadastrarClick() throws IOException {
         Stage primaryStage = new Stage();
-        RunMenu("CadastroView.fxml",primaryStage);
+        OpenPage("CadastroView.fxml",primaryStage);
     }
 }

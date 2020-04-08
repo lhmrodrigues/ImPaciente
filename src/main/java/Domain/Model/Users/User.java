@@ -11,7 +11,7 @@ public abstract class User extends Entity {
 
     //PROPERTIES
     private String name;
-    private String cpf;
+    private String password;
 
     //GETTERS AND SETTERS
     public String getName() {
@@ -22,11 +22,11 @@ public abstract class User extends Entity {
         this.name = name;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

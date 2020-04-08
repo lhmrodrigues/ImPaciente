@@ -7,9 +7,17 @@ public class Patient extends User{
 
     //PROPERTIES
     private int age;
-
+    private String cpf;
 
     //GETTERS AND SETTERS
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public int getAge() {
         return age;
     }
