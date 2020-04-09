@@ -1,23 +1,42 @@
 package UI.Controllers;
 
-import javafx.collections.FXCollections;
+import Domain.Model.Medicine.Medicine;
+import Domain.Model.Prescription.Prescription;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class CinfosPaciente {
-    public Button btnEntrar;
-    public ListView DrugsList;
-    private ObservableList observableList = FXCollections.observableArrayList();
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
+public class CinfosPaciente implements Initializable {
 
-    public void setListView(){
+    @FXML
+    private Text closeButton;
+    @FXML
+    private ListView<Medicine> listViewRemedios;
 
-        observableList.setAll("List");
-        DrugsList.setItems(observableList);
+    private Prescription prescriptionSelected;
+    private List<Medicine> medicinesList = new ArrayList<>();
+    private ObservableList<Medicine> obsMedicines;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    public void BtnEntrarClick(){
 
+    public void initData(Prescription prescriptionSelected) {
+        this.prescriptionSelected = prescriptionSelected;
+    }
+
+    public void clickedOnBackButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 }
