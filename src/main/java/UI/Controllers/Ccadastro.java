@@ -6,12 +6,18 @@ import Application.UserSession;
 import Domain.Model.Users.Medic;
 import Domain.Model.Users.Patient;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Ccadastro extends CBase{
+
+    @FXML
+    private Text closeButton;
 
     public TextField txtNome;
     public TextField txtCpfCrm;
@@ -54,5 +60,10 @@ public class Ccadastro extends CBase{
         catch (Exception e){
             OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
         }
+    }
+
+    public void clickedOnBackButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 }

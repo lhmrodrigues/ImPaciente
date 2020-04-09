@@ -29,7 +29,7 @@
                 <Font size="15.0" />
             </font>
         </Text>
-        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625">
+        <Text fx:id="closeButton" fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625" onMouseClicked="#clickedOnBackButton">
             <font>
                 <Font size="39.0" />
             </font>
