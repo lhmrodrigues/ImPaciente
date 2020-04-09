@@ -38,7 +38,7 @@ public class Ccadastro extends CBase{
                 save.Add(novoUsuario);
 
                 UserSession.getInstance().setUserLogado(novoUsuario);
-                OpenSimplePage("InfoReceitaView.fxml");
+                OpenSimplePage("InfoReceita.fxml");
             } else {
                 MedicApp save = new MedicApp();
                 Medic novoUsuario = new Medic();
