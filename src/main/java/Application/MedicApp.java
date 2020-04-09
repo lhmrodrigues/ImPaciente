@@ -3,7 +3,6 @@ package Application;
 import Application.Interfaces.IMedicApp;
 import Domain.Model.Users.Medic;
 import Infra.Repositories.MedicRepository;
-import org.hibernate.Session;
 
 public class MedicApp extends BaseApp<Medic> implements IMedicApp {
 

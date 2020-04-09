@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.InfosReceita">
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.CinfosReceita">
     <children>
         <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
             <font>

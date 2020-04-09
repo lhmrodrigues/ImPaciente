@@ -4,14 +4,10 @@ import Application.MedicApp;
 import Application.PatientApp;
 import Domain.Model.Users.Medic;
 import Domain.Model.Users.Patient;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 
 import java.io.IOException;
@@ -43,7 +39,7 @@ public class Cmenu extends CBase{
                 patientApp.patientLogin(patient);
 
                 Stage primaryStage = new Stage();
-                OpenPage("InfoReceitaView.fxml", primaryStage);
+                OpenPage("InfoReceita.fxml", primaryStage);
             }
             else{
                 Medic medic = new Medic();

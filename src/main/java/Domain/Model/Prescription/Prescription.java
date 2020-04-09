@@ -5,6 +5,7 @@ import Domain.Model.Users.Medic;
 import Domain.Model.Users.Patient;
 import Domain.Shared.Entity;
 
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.Date;
@@ -14,16 +15,15 @@ import java.util.List;
 public class Prescription extends Entity {
 
     //PROPERTIES
-    @OneToOne
+    @OneToOne(targetEntity = Medic.class,fetch = FetchType.EAGER)
     private Medic medic;
 
-    @OneToOne
+    @OneToOne(targetEntity = Patient.class,fetch = FetchType.EAGER)
     private Patient patient;
 
-    @OneToMany
+    @OneToMany(targetEntity = Medicine.class,fetch = FetchType.EAGER)
     private List<Medicine> medicineList;
 
-    private Date dateCreated;
 
     //GETTERS AND SETTERS
     public Medic getMedic() {
@@ -50,11 +50,4 @@ public class Prescription extends Entity {
         this.medicineList = medicineList;
     }
 
-    public Date getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
-    }
 }
