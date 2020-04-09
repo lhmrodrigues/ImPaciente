@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +24,9 @@ import java.util.ResourceBundle;
 
 
 public class CinfosReceita extends CBase implements Initializable {
+
+    @FXML
+    private Text closeButton;
 
     @FXML
     private ListView<Prescription> listaReceitas;
@@ -79,5 +83,10 @@ public class CinfosReceita extends CBase implements Initializable {
         primaryStage.setTitle("Informações da Receita");
         primaryStage.setScene(new Scene(loader.load()));
         primaryStage.show();
+    }
+
+    public void clickedOnBackButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 }
