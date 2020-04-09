@@ -7,7 +7,6 @@ import Domain.Model.Users.Patient;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -23,10 +22,7 @@ public class Cmenu extends CBase{
 
         try {
             if (txtUsuario.getText().isBlank() || txtSenha.getText().isBlank()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Usuário Inválido");
-                alert.setHeaderText("Usuário e/ou Senha em Branco");
-                alert.show();
+                OpenAlert("Usuário Inválido","Usuário e/ou Senha e/ou Nome em Branco","", Alert.AlertType.WARNING);
                 return;
             }
 
@@ -38,8 +34,7 @@ public class Cmenu extends CBase{
                 PatientApp patientApp = new PatientApp();
                 patientApp.patientLogin(patient);
 
-                Stage primaryStage = new Stage();
-                OpenPage("InfoReceita.fxml", primaryStage);
+                OpenSimplePage("InfoReceita.fxml");
             }
             else{
                 Medic medic = new Medic();
@@ -49,20 +44,16 @@ public class Cmenu extends CBase{
                 MedicApp medicApp = new MedicApp();
                 medicApp.medicLogin(medic);
 
-                Stage primaryStage = new Stage();
-                OpenPage("InfosDoctorView.fxml", primaryStage);
+                OpenSimplePage("InfosDoctorView.fxml");
             }
         }
         catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erro");
-            alert.setHeaderText(e.getMessage());
-            alert.show();
+            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
         }
     }
 
     public void BtnCadastrarClick() throws IOException {
-        Stage primaryStage = new Stage();
-        OpenPage("CadastroView.fxml",primaryStage);
+
+        OpenSimplePage("CadastroView.fxml");
     }
 }

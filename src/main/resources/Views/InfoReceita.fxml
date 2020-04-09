@@ -31,6 +31,6 @@
             <Font size="39.0" />
          </font>
       </Text>
-      <ListView fx:id="listaMedicamentos" layoutX="25.0" layoutY="121.0" prefHeight="402.0" prefWidth="400.0" />
+      <ListView fx:id="listaReceitas" layoutX="25.0" layoutY="121.0" prefHeight="402.0" prefWidth="400.0" onMouseClicked="#mouseClickOnListaMedicamentos"/>
     </children>
 </AnchorPane>
