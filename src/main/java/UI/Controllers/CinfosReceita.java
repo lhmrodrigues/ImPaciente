@@ -7,28 +7,34 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 
-public class CinfosReceita extends CBase {
+public class CinfosReceita extends CBase implements Initializable {
 
-    public CinfosReceita(){
+    @FXML
+    private ListView<Prescription> listaMedicamentos;
+    private List<Prescription> prescriptionList = new ArrayList<>();
+    private ObservableList<Prescription> obsPrescription;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadPrescriptions();
+    }
+
+    private void loadPrescriptions() {
         try {
             PrescriptionApp prescriptionApp = new PrescriptionApp();
-            List<Prescription> prescriptionList = prescriptionApp.getByPatient(UserSession.getInstance().getUsuarioLogado());
-            List<String> prescriptionString = new ArrayList<String>();
-
-            for(Prescription item : prescriptionList){
-                prescriptionString.add(item.getPatient().getName());
-            }
-
-            ObservableList<String>  prescriptionObs = FXCollections.observableArrayList(prescriptionString);
-            ListView<String> listaMedicamentos = new ListView<>(prescriptionObs);
+            prescriptionList = prescriptionApp.getByPatient(UserSession.getInstance().getUsuarioLogado());
+            obsPrescription = FXCollections.observableArrayList(prescriptionList);
+            listaMedicamentos.setItems(obsPrescription);
         }
         catch (Exception e)
         {
@@ -41,4 +47,6 @@ public class CinfosReceita extends CBase {
 
     public void BtnConfirmarClick(ActionEvent actionEvent) {
     }
+
+
 }

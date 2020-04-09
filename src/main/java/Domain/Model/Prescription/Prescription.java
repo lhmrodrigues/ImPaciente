@@ -4,6 +4,7 @@ import Domain.Model.Medicine.Medicine;
 import Domain.Model.Users.Medic;
 import Domain.Model.Users.Patient;
 import Domain.Shared.Entity;
+import org.sqlite.date.DateFormatUtils;
 
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -24,6 +25,7 @@ public class Prescription extends Entity {
     @OneToMany(targetEntity = Medicine.class,fetch = FetchType.EAGER)
     private List<Medicine> medicineList;
 
+    private Date dateOfInclude;
 
     //GETTERS AND SETTERS
     public Medic getMedic() {
@@ -50,4 +52,16 @@ public class Prescription extends Entity {
         this.medicineList = medicineList;
     }
 
+    public Date getDateOfInclude() {
+        return dateOfInclude;
+    }
+
+    public void setDateOfInclude(Date dateOfInclude) {
+        this.dateOfInclude = dateOfInclude;
+    }
+
+    @Override
+    public String toString() {
+        return medic.getName() + " - " + DateFormatUtils.format(getDateOfInclude(),"dd-MM-yyyy");
+    }
 }
