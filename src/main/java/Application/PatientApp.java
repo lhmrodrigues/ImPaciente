@@ -23,4 +23,16 @@ public class PatientApp extends BaseApp<Patient> implements IPatientApp {
             return sqlPacient;
         }
     }
+
+    public Patient getPatientByCPF(String cpf) throws Exception {
+        Patient patient = new Patient();
+        patient.setCpfCrm(cpf);
+        Patient sqlPacient = _patientRepository.patientByCPF(patient);
+
+        if (sqlPacient == null || !sqlPacient.getPassword().equals(patient.getPassword())) {
+            throw new Exception("CPF e/ou senha inválidos");
+        } else {
+            return sqlPacient;
+        }
+    }
 }

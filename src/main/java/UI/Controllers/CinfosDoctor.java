@@ -4,6 +4,7 @@ import Application.*;
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
 import Domain.Model.Users.Medic;
+import Domain.Model.Users.Patient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableListBase;
@@ -47,9 +48,8 @@ public class CinfosDoctor {
             medicine.id = 1;
             medicine.setName("aa");
 
+            medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
-            obsMedicines.add(medicine);
-
             listMedicamento.setItems(obsMedicines);
         }
         catch (Exception e)
@@ -61,8 +61,8 @@ public class CinfosDoctor {
     public void AddPrescripton() throws IOException {
         try {
             Prescription prescription = new Prescription();
-            prescription.setPatient(patientApp.getById(UserSession.getInstance().getUsuarioLogado().id));
-            prescription.setMedic(medicApp.getById(Integer.parseInt(txtNomeMedicamento.getText())));
+            prescription.setPatient(patientApp.getById(patientApp.getPatientByCPF(txtCPF.getText()).id));
+            prescription.setMedic(medicApp.getById(UserSession.getInstance().getUsuarioLogado().id));
             prescription.setMedicineList(obsMedicines);
             prescription.setDateOfInclude(new Date());
 
