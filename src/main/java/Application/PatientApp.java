@@ -24,6 +24,18 @@ public class PatientApp extends BaseApp<Patient> implements IPatientApp {
         }
     }
 
+    public Patient getPatientByCPF(String cpf) throws Exception {
+        Patient patient = new Patient();
+        patient.setCpfCrm(cpf);
+        Patient sqlPacient = _patientRepository.patientByCPF(patient);
+
+        if (sqlPacient == null ) {
+            throw new Exception("CPF desconhecido");
+        } else {
+            return sqlPacient;
+        }
+    }
+
     @Override
     public void Add(Patient entity) throws Exception {
         Patient sqlPacient =  _patientRepository.patientByCPF(entity);
