@@ -75,5 +75,6 @@ public class CinfosDoctor {
     public void clickedOnBackButton(MouseEvent mouseEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
+
     }
 }
