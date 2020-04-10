@@ -35,4 +35,16 @@ public class PatientApp extends BaseApp<Patient> implements IPatientApp {
             return sqlPacient;
         }
     }
+
+    @Override
+    public void Add(Patient entity) throws Exception {
+        Patient sqlPacient =  _patientRepository.patientByCPF(entity);
+        if(sqlPacient == null) {
+            super.Add(entity);
+        }
+        else
+        {
+            throw new Exception("Já existe Paciente com esse CPF");
+        }
+    }
 }

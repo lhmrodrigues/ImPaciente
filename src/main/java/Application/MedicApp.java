@@ -23,4 +23,16 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
             return sqlMedic;
         }
     }
+
+    @Override
+    public void Add(Medic entity) throws Exception {
+        Medic sqlPacient =  _medicRepository.medicByCRM(entity);
+        if(sqlPacient == null) {
+            super.Add(entity);
+        }
+        else
+        {
+            throw new Exception("Já existe Medico com esse CRM");
+        }
+    }
 }
