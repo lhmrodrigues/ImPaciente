@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.plaf.metal.MetalComboBoxEditor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -43,10 +44,10 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
+            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
             Medicine medicine = new Medicine();
             medicine.id = 1;
             medicine.setName("aa");
-
             medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
             listMedicamento.setItems(obsMedicines);
@@ -57,19 +58,20 @@ public class CinfosDoctor {
         }
     }
 
-    public void AddPrescripton() throws IOException {
+    public void AddPrescripton() throws Exception {
         try {
+            Date date = new Date();
             Prescription prescription = new Prescription();
             prescription.setPatient(patientApp.getById(patientApp.getPatientByCPF(txtCPF.getText()).id));
             prescription.setMedic(medicApp.getById(UserSession.getInstance().getUsuarioLogado().id));
             prescription.setMedicineList(obsMedicines);
-            prescription.setDateOfInclude(new Date());
+            prescription.setDateOfInclude(date);
 
             prescriptionApp.Add(prescription);
 
         }
         catch (Exception e) {
-
+            throw new Exception("Não foi possível adicionar o medicamento");
         }
     }
 
