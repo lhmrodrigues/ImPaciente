@@ -26,6 +26,6 @@
             <Font size="39.0" />
          </font>
       </Text>
-      <ListView id="listViewRemedios" layoutX="26.0" layoutY="124.0" prefHeight="450.0" prefWidth="400.0" />
+      <ListView fx:id="listViewRemedios" layoutX="26.0" layoutY="124.0" prefHeight="450.0" prefWidth="400.0" />
     </children>
 </AnchorPane>
