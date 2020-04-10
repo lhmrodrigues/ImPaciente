@@ -3,6 +3,8 @@ package UI.Controllers;
 import Application.*;
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
+import Domain.Model.Users.Medic;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CinfosDoctor {
 
@@ -26,29 +29,28 @@ public class CinfosDoctor {
     public Button btnCriarReceita;
     public TextField txtCPF;
     public TextField txtNomeMedicamento;
-    public ListView listMedicamento;
+
+    @FXML
+    public ListView<Medicine> listMedicamento;
+    private List<Medicine> medicinesList = new ArrayList<>();
+    private ObservableList<Medicine> obsMedicines;
+
     public MedicApp medicApp = new MedicApp();
     public PatientApp patientApp = new PatientApp();
     public MedicineApp medicineApp = new MedicineApp();
     public PrescriptionApp prescriptionApp = new PrescriptionApp();
-    public ArrayList<Medicine> listaMedicamentosAdicioandos = new ArrayList<Medicine>() {
-        @Override
-        public Medicine get(int i) {
-            return null;
-        }
-
-        @Override
-        public int size() {
-            return 0;
-        }
-    };
 
     public void AddMedicine() throws IOException {
         try {
-            Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
-            listaMedicamentosAdicioandos.add(medicine);
+            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
+            Medicine medicine = new Medicine();
+            medicine.id = 1;
+            medicine.setName("aa");
 
-            listMedicamento.setItems((ObservableList) listaMedicamentosAdicioandos);
+            obsMedicines = FXCollections.observableArrayList(medicinesList);
+            obsMedicines.add(medicine);
+
+            listMedicamento.setItems(obsMedicines);
         }
         catch (Exception e)
         {
@@ -61,7 +63,7 @@ public class CinfosDoctor {
             Prescription prescription = new Prescription();
             prescription.setPatient(patientApp.getById(UserSession.getInstance().getUsuarioLogado().id));
             prescription.setMedic(medicApp.getById(Integer.parseInt(txtNomeMedicamento.getText())));
-            prescription.setMedicineList(listaMedicamentosAdicioandos);
+            prescription.setMedicineList(obsMedicines);
             prescription.setDateOfInclude(new Date());
 
             prescriptionApp.Add(prescription);
@@ -75,6 +77,5 @@ public class CinfosDoctor {
     public void clickedOnBackButton(MouseEvent mouseEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-
     }
 }
