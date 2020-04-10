@@ -54,6 +54,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <ListView fx:id="listMedicamento" layoutX="24.0" layoutY="268.0" prefHeight="245.0" prefWidth="400.0" />
+      <ListView fx:id="listMedicamento" layoutX="24.0" layoutY="268.0" prefHeight="245.0" prefWidth="400.0" onMouseClicked="#mouseClickOnListaMedicamentos"/>
     </children>
 </AnchorPane>

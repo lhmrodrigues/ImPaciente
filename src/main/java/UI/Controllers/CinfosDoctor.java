@@ -3,11 +3,8 @@ package UI.Controllers;
 import Application.*;
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
-import Domain.Model.Users.Medic;
-import Domain.Model.Users.Patient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -17,13 +14,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.metal.MetalComboBoxEditor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CinfosDoctor {
+public class CinfosDoctor extends CBase{
 
     @FXML
     private Text closeButton;
@@ -45,14 +41,18 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
-            Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
+            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
+            Medicine medicine = new Medicine();
+            medicine.id = 1;
+            medicine.setName("aa");
             medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
             listMedicamento.setItems(obsMedicines);
+
         }
         catch (Exception e)
         {
-            e.getMessage();
+            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
         }
     }
 
@@ -66,10 +66,23 @@ public class CinfosDoctor {
             prescription.setDateOfInclude(date);
 
             prescriptionApp.Add(prescription);
+            OpenAlert("Sucesso","Prescrição médica criada","", Alert.AlertType.CONFIRMATION);
 
         }
         catch (Exception e) {
-            throw new Exception("Não foi possível adicionar o medicamento");
+            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        }
+    }
+
+    public void mouseClickOnListaMedicamentos(MouseEvent mouseEvent) throws Exception {
+        try {
+            Medicine medicineSelected = listMedicamento.getSelectionModel().getSelectedItem();
+            listMedicamento.getItems().remove(medicineSelected);
+            medicinesList.remove(medicineSelected);
+        }
+        catch(Exception e)
+        {
+            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
         }
     }
 
