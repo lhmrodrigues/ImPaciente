@@ -19,6 +19,6 @@ public class Medicine extends Entity {
 
     @Override
     public String toString() {
-        return this.getName();
+        return this.id + " - " + this.getName();
     }
 }

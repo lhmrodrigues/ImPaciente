@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-
-<AnchorPane id="cbMedico" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.Ccadastro">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="cbMedico" prefHeight="600.0" prefWidth="450.0"
+            style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            fx:controller="UI.Controllers.Ccadastro">
     <children>
         <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
             <font>
-                <Font size="20.0" />
+                <Font size="20.0"/>
             </font>
         </Text>
-        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnCadastroClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar-se" textFill="WHITE">
+        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnCadastroClick"
+                prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar-se"
+                textFill="WHITE">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="18.0"/>
             </font>
         </Button>
-        <Text fill="WHITE" layoutX="151.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar" textAlignment="CENTER" wrappingWidth="146.77734375">
+        <Text fill="WHITE" layoutX="151.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar"
+              textAlignment="CENTER" wrappingWidth="146.77734375">
             <font>
-                <Font name="System Bold" size="22.0" />
+                <Font name="System Bold" size="22.0"/>
             </font>
         </Text>
         <Text fill="#ffce54" layoutX="24.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF / CRM">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </Text>
-        <Text fx:id="closeButton" fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625" onMouseClicked="#clickedOnBackButton">
+        <Text fx:id="closeButton" fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="&lt;" wrappingWidth="31.681640625" onMouseClicked="#clickedOnBackButton">
             <font>
-                <Font size="39.0" />
+                <Font size="39.0"/>
             </font>
         </Text>
-        <TextField fx:id="txtCpfCrm" layoutX="24.0" layoutY="149.0" prefHeight="34.0" prefWidth="400.0" promptText="___.___.___-__">
+        <TextField fx:id="txtCpfCrm" layoutX="24.0" layoutY="149.0" prefHeight="34.0" prefWidth="400.0"
+                   promptText="___.___.___-__">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </TextField>
         <Text fill="#ffce54" layoutX="25.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </Text>
         <TextField fx:id="txtNome" layoutX="24.0" layoutY="236.0" prefHeight="34.0" prefWidth="400.0">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </TextField>
-      <Text fill="#ffce54" layoutX="25.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtSenha" accessibleRole="PASSWORD_FIELD" layoutX="24.0" layoutY="326.0" prefHeight="34.0" prefWidth="400.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
+        <Text fill="#ffce54" layoutX="25.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Text>
+        <TextField fx:id="txtSenha" accessibleRole="PASSWORD_FIELD" layoutX="24.0" layoutY="326.0" prefHeight="34.0"
+                   prefWidth="400.0">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
     </children>
 </AnchorPane>

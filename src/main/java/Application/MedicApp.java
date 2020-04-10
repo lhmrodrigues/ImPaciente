@@ -8,17 +8,16 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
 
     private MedicRepository _medicRepository;
 
-    public MedicApp(){
+    public MedicApp() {
         _medicRepository = new MedicRepository();
     }
 
     public Medic medicLogin(Medic medic) throws Exception {
-        Medic sqlMedic =  _medicRepository.medicByCRM(medic);
+        Medic sqlMedic = _medicRepository.medicByCRM(medic);
 
-        if(sqlMedic == null || !sqlMedic.getPassword().equals(medic.getPassword())){
+        if (sqlMedic == null || !sqlMedic.getPassword().equals(medic.getPassword())) {
             throw new Exception("CRM e/ou senha inválidos");
-        }
-        else{
+        } else {
             UserSession.getInstance().setUserLogado(sqlMedic);
             return sqlMedic;
         }
@@ -26,12 +25,10 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
 
     @Override
     public void Add(Medic entity) throws Exception {
-        Medic sqlPacient =  _medicRepository.medicByCRM(entity);
-        if(sqlPacient == null) {
+        Medic sqlPacient = _medicRepository.medicByCRM(entity);
+        if (sqlPacient == null) {
             super.Add(entity);
-        }
-        else
-        {
+        } else {
             throw new Exception("Já existe Medico com esse CRM");
         }
     }

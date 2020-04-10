@@ -8,10 +8,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-
 import java.io.IOException;
 
-public class Cmenu extends CBase{
+public class Cmenu extends CBase {
 
     public Button btnEntrar;
     public Button btnCadastrar;
@@ -22,7 +21,7 @@ public class Cmenu extends CBase{
 
         try {
             if (txtUsuario.getText().isBlank() || txtSenha.getText().isBlank()) {
-                OpenAlert("Usuário Inválido","Usuário e/ou Senha e/ou Nome em Branco","", Alert.AlertType.WARNING);
+                OpenAlert("Usuário Inválido", "Usuário e/ou Senha e/ou Nome em Branco", "", Alert.AlertType.WARNING);
                 return;
             }
 
@@ -35,8 +34,7 @@ public class Cmenu extends CBase{
                 patientApp.patientLogin(patient);
 
                 OpenSimplePage("InfoReceita.fxml");
-            }
-            else{
+            } else {
                 Medic medic = new Medic();
                 medic.setCpfCrm(txtUsuario.getText());
                 medic.setPassword(txtSenha.getText());
@@ -46,9 +44,8 @@ public class Cmenu extends CBase{
 
                 OpenSimplePage("InfosDoctorView.fxml");
             }
-        }
-        catch (Exception e){
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 

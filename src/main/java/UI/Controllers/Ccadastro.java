@@ -14,15 +14,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Ccadastro extends CBase{
-
-    @FXML
-    private Text closeButton;
+public class Ccadastro extends CBase {
 
     public TextField txtNome;
     public TextField txtCpfCrm;
     public TextField txtSenha;
     public Button btnCadastrar;
+    @FXML
+    private Text closeButton;
 
     public void BtnCadastroClick(ActionEvent actionEvent) throws Exception {
         try {
@@ -31,7 +30,7 @@ public class Ccadastro extends CBase{
             String senha = txtSenha.getText();
 
             if (doc.isBlank() || senha.isBlank() || nome.isBlank()) {
-                OpenAlert("Usuário Inválido","Usuário e/ou Senha e/ou Nome em Branco","", Alert.AlertType.WARNING);
+                OpenAlert("Usuário Inválido", "Usuário e/ou Senha e/ou Nome em Branco", "", Alert.AlertType.WARNING);
                 return;
             }
 
@@ -56,9 +55,8 @@ public class Ccadastro extends CBase{
                 UserSession.getInstance().setUserLogado(novoUsuario);
                 OpenSimplePage("InfosDoctorView.fxml");
             }
-        }
-        catch (Exception e){
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 

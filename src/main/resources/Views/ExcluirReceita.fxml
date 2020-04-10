@@ -4,41 +4,44 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExcluirReceita">
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="450.0"
+            style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="ExcluirReceita">
     <children>
         <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
             <font>
-                <Font size="20.0" />
+                <Font size="20.0"/>
             </font>
         </Text>
-        <Button fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Excluir Receita" textFill="WHITE">
+        <Button fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick"
+                prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Excluir Receita"
+                textFill="WHITE">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="18.0"/>
             </font>
         </Button>
-        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
+        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
             <font>
-                <Font name="System Bold" size="12.0" />
+                <Font name="System Bold" size="12.0"/>
             </font>
         </Text>
-        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625">
+        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;"
+              wrappingWidth="31.681640625">
             <font>
-                <Font size="39.0" />
+                <Font size="39.0"/>
             </font>
         </Text>
         <Text fill="#ffce54" layoutX="24.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID da receita">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </Text>
         <TextField fx:id="txtNome" layoutX="25.0" layoutY="142.0" prefHeight="34.0" prefWidth="400.0">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </TextField>
-      <TextArea id="txtConteudoReceita" layoutX="25.0" layoutY="190.0" prefHeight="213.0" prefWidth="400.0" />
+        <TextArea id="txtConteudoReceita" layoutX="25.0" layoutY="190.0" prefHeight="213.0" prefWidth="400.0"/>
     </children>
 </AnchorPane>

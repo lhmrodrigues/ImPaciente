@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Started");
         PatientApp userApp = new PatientApp();
         Patient patient = new Patient();
-        patient.setCpfCrm("42188612850");
+        patient.setCpfCrm("11122233300");
         patient.setName("Douglas");
         patient.setPassword("1234");
         userApp.Add(patient);
@@ -37,9 +37,27 @@ public class Main {
         System.out.println(medicList.get(0).id);
 
         MedicineApp medicineApp = new MedicineApp();
+
         Medicine medicine = new Medicine();
         medicine.setName("Dramin");
         medicineApp.Add(medicine);
+
+        Medicine medicine2 = new Medicine();
+        medicine2.setName("Rivotril");
+        medicineApp.Add(medicine2);
+
+        Medicine medicine3 = new Medicine();
+        medicine3.setName("Dorflex");
+        medicineApp.Add(medicine3);
+
+        Medicine medicine4 = new Medicine();
+        medicine4.setName("Venlafaxina");
+        medicineApp.Add(medicine4);
+
+        Medicine medicine5 = new Medicine();
+        medicine5.setName("Paracetamol");
+        medicineApp.Add(medicine5);
+
         java.util.List<Medicine> medicineList = medicineApp.getAll(Medicine.class);
 
         System.out.println(medicineList.get(0).id);

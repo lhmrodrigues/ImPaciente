@@ -16,13 +16,13 @@ import java.util.List;
 public class Prescription extends Entity {
 
     //PROPERTIES
-    @OneToOne(targetEntity = Medic.class,fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Medic.class, fetch = FetchType.EAGER)
     private Medic medic;
 
-    @OneToOne(targetEntity = Patient.class,fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = Patient.class, fetch = FetchType.EAGER)
     private Patient patient;
 
-    @OneToMany(targetEntity = Medicine.class,fetch = FetchType.EAGER)
+    @OneToMany(targetEntity = Medicine.class, fetch = FetchType.EAGER)
     private List<Medicine> medicineList;
 
     private Date dateOfInclude;
@@ -62,6 +62,6 @@ public class Prescription extends Entity {
 
     @Override
     public String toString() {
-        return medic.getName() + " - " + DateFormatUtils.format(getDateOfInclude(),"dd-MM-yyyy");
+        return medic.getName() + " - " + DateFormatUtils.format(getDateOfInclude(), "dd-MM-yyyy");
     }
 }

@@ -4,51 +4,59 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AlterarReceita">
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="450.0"
+            style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="AlterarReceita">
     <children>
         <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
             <font>
-                <Font size="20.0" />
+                <Font size="20.0"/>
             </font>
         </Text>
-        <Button id="btnAlterar" fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Alterar Receita" textFill="WHITE">
+        <Button id="btnAlterar" fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false"
+                onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;"
+                text="Alterar Receita" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="18.0"/>
             </font>
         </Button>
-        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
+        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
             <font>
-                <Font name="System Bold" size="12.0" />
+                <Font name="System Bold" size="12.0"/>
             </font>
         </Text>
-        <ListView fx:id="DrugsList" layoutX="25.0" layoutY="206.0" prefHeight="299.0" prefWidth="400.0" />
-        <Text fill="#ffce54" layoutX="28.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicamentos receitados">
+        <ListView fx:id="DrugsList" layoutX="25.0" layoutY="206.0" prefHeight="299.0" prefWidth="400.0"/>
+        <Text fill="#ffce54" layoutX="28.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Medicamentos receitados">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </Text>
-        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625">
+        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;"
+              wrappingWidth="31.681640625">
             <font>
-                <Font size="39.0" />
+                <Font size="39.0"/>
             </font>
         </Text>
-        <Text fill="#ffce54" layoutX="26.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesquisar Receita">
+        <Text fill="#ffce54" layoutX="26.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Pesquisar Receita">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </Text>
-        <TextField id="txtIdReceita" fx:id="txtNome" layoutX="25.0" layoutY="122.0" prefHeight="34.0" prefWidth="343.0" promptText="Id da Receita">
+        <TextField id="txtIdReceita" fx:id="txtNome" layoutX="25.0" layoutY="122.0" prefHeight="34.0" prefWidth="343.0"
+                   promptText="Id da Receita">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </TextField>
-      <Button id="btnPesquisar" fx:id="btnEntrar1" layoutX="375.0" layoutY="119.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="55.0" style="-fx-background-color: #FF7F50;" text="OK" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
+        <Button id="btnPesquisar" fx:id="btnEntrar1" layoutX="375.0" layoutY="119.0" mnemonicParsing="false"
+                onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="55.0" style="-fx-background-color: #FF7F50;"
+                text="OK" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Button>
     </children>
 </AnchorPane>
