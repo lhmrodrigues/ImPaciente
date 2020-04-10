@@ -2,6 +2,7 @@ package UI.Controllers;
 
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +29,9 @@ public class CinfosPaciente implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        medicinesList = prescriptionSelected.getMedicineList();
+        obsMedicines = FXCollections.observableArrayList(medicinesList);
+        listViewRemedios.setItems(obsMedicines);
     }
 
     public void initData(Prescription prescriptionSelected) {

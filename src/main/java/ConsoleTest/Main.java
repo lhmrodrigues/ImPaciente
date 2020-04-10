@@ -19,6 +19,7 @@ public class Main {
         Patient patient = new Patient();
         patient.setCpfCrm("42188612850");
         patient.setName("Douglas");
+        patient.setPassword("1234");
         userApp.Add(patient);
         java.util.List<Patient> patientList = userApp.getAll(Patient.class);
 
@@ -28,6 +29,7 @@ public class Main {
         Medic medic = new Medic();
         medic.setCpfCrm("1234");
         medic.setName("Luis");
+        medic.setPassword("1234");
         medic.setPatientList(patientList);
         medicApp.Add(medic);
         java.util.List<Medic> medicList = medicApp.getAll(Medic.class);

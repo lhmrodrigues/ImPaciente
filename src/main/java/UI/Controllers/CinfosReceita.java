@@ -15,6 +15,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -75,11 +76,24 @@ public class CinfosReceita extends CBase implements Initializable {
         Prescription prescriptionSelected = listaReceitas.getSelectionModel().getSelectedItem();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/InfosPacienteView.fxml"));
 
+        loader.setControllerFactory(new Callback<Class<?>, Object>() {
+            @Override
+            public Object call(Class<?> controllerClass) {
+                if (controllerClass == CinfosPaciente.class) {
+                    CinfosPaciente controller = new CinfosPaciente();
+                    controller.initData(prescriptionSelected);
+                    return controller ;
+                } else {
+                    try {
+                        return controllerClass.newInstance();
+                    } catch (Exception exc) {
+                        throw new RuntimeException(exc); // just bail
+                    }
+                }
+            }
+        });
+
         Stage primaryStage = new Stage();
-
-        CinfosPaciente controller = loader.<CinfosPaciente>getController();
-        controller.initData(prescriptionSelected);
-
         primaryStage.setTitle("Informações da Receita");
         primaryStage.setScene(new Scene(loader.load()));
         primaryStage.show();
