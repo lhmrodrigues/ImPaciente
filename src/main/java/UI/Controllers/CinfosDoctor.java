@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -44,10 +45,7 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
-            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
-            Medicine medicine = new Medicine();
-            medicine.id = 1;
-            medicine.setName("aa");
+            Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
             medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
             listMedicamento.setItems(obsMedicines);
@@ -79,4 +77,5 @@ public class CinfosDoctor {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
+
 }
