@@ -43,7 +43,6 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
-            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
             Medicine medicine = new Medicine();
             medicine.id = 1;
             medicine.setName("aa");
