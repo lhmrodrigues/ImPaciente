@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class CinfosDoctor {
@@ -30,7 +31,7 @@ public class CinfosDoctor {
     public PatientApp patientApp = new PatientApp();
     public MedicineApp medicineApp = new MedicineApp();
     public PrescriptionApp prescriptionApp = new PrescriptionApp();
-    public ObservableList<Medicine> listaMedicamentosAdicioandos = new ObservableListBase<Medicine>() {
+    public ArrayList<Medicine> listaMedicamentosAdicioandos = new ArrayList<Medicine>() {
         @Override
         public Medicine get(int i) {
             return null;
@@ -44,11 +45,10 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
-            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
-            Medicine medicine = new Medicine();
-            medicine.id = Integer.parseInt(txtNomeMedicamento.getText());
+            Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
             listaMedicamentosAdicioandos.add(medicine);
-            listMedicamento.setItems(listaMedicamentosAdicioandos);
+
+            listMedicamento.setItems((ObservableList) listaMedicamentosAdicioandos);
         }
         catch (Exception e)
         {
