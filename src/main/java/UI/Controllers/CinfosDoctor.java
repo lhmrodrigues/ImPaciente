@@ -42,14 +42,12 @@ public class CinfosDoctor {
 
     public void AddMedicine() throws IOException {
         try {
-            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
             Medicine medicine = new Medicine();
             medicine.id = 1;
             medicine.setName("aa");
 
+            medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
-            obsMedicines.add(medicine);
-
             listMedicamento.setItems(obsMedicines);
         }
         catch (Exception e)
