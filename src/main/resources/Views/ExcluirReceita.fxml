@@ -11,12 +11,12 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Excluir Receita" textFill="WHITE">
+        <Button fx:id="btnEntrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false"  prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Excluir Receita" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="btnProcurar" layoutX="335.0" layoutY="139.0" mnemonicParsing="false" onAction="#VerificaCpf" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #FF7F50;" text="Buscar" textFill="WHITE">
+        <Button fx:id="btnProcurar" layoutX="335.0" layoutY="139.0" mnemonicParsing="false"  prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #FF7F50;" text="Buscar" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>

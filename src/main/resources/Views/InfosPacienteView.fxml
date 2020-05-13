@@ -26,7 +26,7 @@
             <Font size="39.0" />
          </font>
       </Text>
-        <Button fx:id="btnSair" layoutX="135.0" layoutY="526.0" mnemonicParsing="false" onAction="#SairApp" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FF7F50;" text="Sair" textFill="WHITE">
+        <Button fx:id="btnSair" layoutX="135.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FF7F50;" text="Sair" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
