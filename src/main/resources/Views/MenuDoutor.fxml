@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CmenuDoutor">
+    <children>
+        <Text fill="#ffce54" layoutX="177.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Button id="btnExcluir" fx:id="btnExcluir" layoutX="117.0" layoutY="245.0" mnemonicParsing="false" onAction="#BtnExcluirReceita" prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #FF7F50;" text="Excluir Receita" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Text fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625">
+            <font>
+                <Font size="39.0" />
+            </font>
+        </Text>
+        <Button id="btnAdicionar" fx:id="btnAdicionar" layoutX="117.0" layoutY="127.0" mnemonicParsing="false" onAction="#BtnAdicionarReceita" prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #FF7F50;" text="Adicionar Receita" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
