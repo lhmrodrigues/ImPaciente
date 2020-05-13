@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -22,6 +23,8 @@ public class CinfosPaciente implements Initializable {
     private Text closeButton;
     @FXML
     private ListView<Medicine> listViewRemedios;
+
+    public Button btnSair;
 
     private Prescription prescriptionSelected;
     private List<Medicine> medicinesList = new ArrayList<>();

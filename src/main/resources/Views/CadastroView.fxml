@@ -11,7 +11,7 @@
                 <Font size="20.0" />
             </font>
         </Text>
-        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnCadastroClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar-se" textFill="WHITE">
+        <Button fx:id="btnCadastrar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false" onAction="#BtnCadastroClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;" text="Cadastrar" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -26,7 +26,7 @@
                 <Font size="15.0" />
             </font>
         </Text>
-        <Text fx:id="closeButton" fill="#ffce54" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625" onMouseClicked="#clickedOnBackButton">
+        <Text fx:id="closeButton" fill="#ffce54" layoutX="14.0" layoutY="36.0" onMouseClicked="#clickedOnBackButton" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="31.681640625">
             <font>
                 <Font size="39.0" />
             </font>
