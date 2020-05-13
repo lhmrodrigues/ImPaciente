@@ -45,30 +45,24 @@ public class CinfosReceita extends CBase implements Initializable {
             prescriptionList = prescriptionApp.getByPatient(UserSession.getInstance().getUsuarioLogado());
             obsPrescription = FXCollections.observableArrayList(prescriptionList);
             listaReceitas.setItems(obsPrescription);
-        }
-        catch (Exception e)
-        {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
     public void BtnConfirmarClick(ActionEvent actionEvent) {
         try {
             openSelectPrescription();
-        }
-        catch (Exception e)
-        {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
     public void mouseClickOnListaMedicamentos(MouseEvent mouseEvent) {
         try {
             openSelectPrescription();
-        }
-        catch(Exception e)
-        {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
@@ -82,7 +76,7 @@ public class CinfosReceita extends CBase implements Initializable {
                 if (controllerClass == CinfosPaciente.class) {
                     CinfosPaciente controller = new CinfosPaciente();
                     controller.initData(prescriptionSelected);
-                    return controller ;
+                    return controller;
                 } else {
                     try {
                         return controllerClass.newInstance();

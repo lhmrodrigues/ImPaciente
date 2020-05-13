@@ -6,16 +6,19 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateContext {
     private static HibernateContext INSTANCE = null;
+    private SessionFactory sessionFactory;
 
-    public static HibernateContext getInstance(){
-        if(INSTANCE == null)
+    public HibernateContext() {
+        sessionFactory = new Configuration().configure().buildSessionFactory();
+    }
+
+    public static HibernateContext getInstance() {
+        if (INSTANCE == null)
             INSTANCE = new HibernateContext();
 
         return INSTANCE;
 
     }
-
-    private SessionFactory sessionFactory;
 
     public void setSessionFactory(final SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -23,9 +26,5 @@ public class HibernateContext {
 
     public Session getSession() {
         return sessionFactory.openSession();
-    }
-
-    public HibernateContext(){
-        sessionFactory   = new Configuration().configure().buildSessionFactory();
     }
 }

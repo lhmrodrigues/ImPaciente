@@ -9,7 +9,8 @@ import java.util.List;
 public abstract class BaseApp<T extends Entity> implements IBaseApp<T> {
 
     private BaseRepository<T> _baseRepository;
-    public BaseApp(){
+
+    public BaseApp() {
         _baseRepository = new BaseRepository<T>();
     }
 
@@ -34,7 +35,7 @@ public abstract class BaseApp<T extends Entity> implements IBaseApp<T> {
         _baseRepository.delete(entity);
     }
 
-    public void delete(T entity) throws Exception{
+    public void delete(T entity) throws Exception {
         _baseRepository.delete(entity);
     }
 }

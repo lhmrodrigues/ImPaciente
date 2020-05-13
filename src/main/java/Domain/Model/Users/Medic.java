@@ -5,8 +5,8 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Medic extends User{
-    
+public class Medic extends User {
+
     @OneToMany
     private List<Patient> patientList;
 

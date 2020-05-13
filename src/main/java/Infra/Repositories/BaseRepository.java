@@ -8,9 +8,9 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class BaseRepository<T extends Entity>  implements IBaseRepository<T> {
+public class BaseRepository<T extends Entity> implements IBaseRepository<T> {
 
-    public List<T> getAll(Class<T> entity) throws Exception{
+    public List<T> getAll(Class<T> entity) throws Exception {
         Session session = HibernateContext.getInstance().getSession();
         try {
             Query query = session.createQuery("FROM " + entity.getSimpleName());

@@ -1,7 +1,6 @@
 package Infra.Repositories;
 
 import Domain.Model.Prescription.Prescription;
-import Domain.Model.Users.Medic;
 import Infra.Context.HibernateContext;
 import Infra.Repositories.Interfaces.IPrescriptionRepository;
 import org.hibernate.Session;

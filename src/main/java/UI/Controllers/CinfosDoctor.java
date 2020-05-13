@@ -6,6 +6,7 @@ import Domain.Model.Prescription.Prescription;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -13,46 +14,51 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class CinfosDoctor extends CBase{
-
-    @FXML
-    private Text closeButton;
+public class CinfosDoctor extends CBase implements Initializable {
 
     public Button btnAdicionarMedicamento;
     public Button btnCriarReceita;
     public TextField txtCPF;
     public TextField txtNomeMedicamento;
-
     @FXML
     public ListView<Medicine> listMedicamento;
-    private List<Medicine> medicinesList = new ArrayList<>();
-    private ObservableList<Medicine> obsMedicines;
-
     public MedicApp medicApp = new MedicApp();
     public PatientApp patientApp = new PatientApp();
     public MedicineApp medicineApp = new MedicineApp();
     public PrescriptionApp prescriptionApp = new PrescriptionApp();
+    @FXML
+    private Text closeButton;
+    private List<Medicine> medicinesList = new ArrayList<>();
+    private ObservableList<Medicine> obsMedicines;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            List<Medicine> allMedicines = medicineApp.getAll(Medicine.class);
+            TextFields.bindAutoCompletion(txtNomeMedicamento, allMedicines);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
+        }
+    }
 
     public void AddMedicine() throws IOException {
         try {
-            //Medicine medicine = medicineApp.getById(Integer.parseInt(txtNomeMedicamento.getText()));
-            Medicine medicine = new Medicine();
-            medicine.id = 1;
-            medicine.setName("aa");
+            String[] array = txtNomeMedicamento.getText().split("-");
+            Medicine medicine = medicineApp.getById(Integer.parseInt(array[0].trim()));
             medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
             listMedicamento.setItems(obsMedicines);
-
-        }
-        catch (Exception e)
-        {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
@@ -66,11 +72,10 @@ public class CinfosDoctor extends CBase{
             prescription.setDateOfInclude(date);
 
             prescriptionApp.Add(prescription);
-            OpenAlert("Sucesso","Prescrição médica criada","", Alert.AlertType.CONFIRMATION);
+            OpenAlert("Sucesso", "Prescrição médica criada", "", Alert.AlertType.CONFIRMATION);
 
-        }
-        catch (Exception e) {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
@@ -79,10 +84,8 @@ public class CinfosDoctor extends CBase{
             Medicine medicineSelected = listMedicamento.getSelectionModel().getSelectedItem();
             listMedicamento.getItems().remove(medicineSelected);
             medicinesList.remove(medicineSelected);
-        }
-        catch(Exception e)
-        {
-            OpenAlert("Erro",e.getMessage(),"", Alert.AlertType.ERROR);
+        } catch (Exception e) {
+            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
         }
     }
 
@@ -90,5 +93,4 @@ public class CinfosDoctor extends CBase{
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
-
 }
