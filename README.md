@@ -3,7 +3,7 @@ Esse conjunto de projetos faz parte da disciplina de Linguagem de Programação 
 
 A Linguagem de Programação utilizada para a disciplina é Java.
 
-SDK: JAVA 11
+SDK: JAVA 11 (utilizando Mavem para gerenciamento de pacotes)
 
 IDE: 
 IntelliJ IDEA 2019.3.4 (Community Edition)
