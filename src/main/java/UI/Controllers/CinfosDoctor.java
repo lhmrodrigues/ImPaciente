@@ -1,7 +1,6 @@
 package UI.Controllers;
 
 import Application.*;
-import Application.Interfaces.IMedicApp;
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
 import javafx.collections.FXCollections;
