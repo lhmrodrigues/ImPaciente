@@ -5,7 +5,7 @@ import Domain.Shared.Entity;
 import java.util.List;
 
 public interface IBaseApp<T extends Entity> {
-    void Add(T entity) throws Exception;
+    void add(T entity) throws Exception;
 
     List<T> getAll(Class<T> tClass) throws Exception;
 

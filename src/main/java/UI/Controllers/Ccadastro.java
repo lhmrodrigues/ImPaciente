@@ -1,5 +1,6 @@
 package UI.Controllers;
 
+import Application.Interfaces.IMedicApp;
 import Application.MedicApp;
 import Application.PatientApp;
 import Application.UserSession;
@@ -20,8 +21,17 @@ public class Ccadastro extends CBase {
     public TextField txtCpfCrm;
     public TextField txtSenha;
     public Button btnCadastrar;
+
     @FXML
     private Text closeButton;
+
+
+    private MedicApp _medicApp;
+    private PatientApp _patientApp;
+    public Ccadastro(){
+        _medicApp = new MedicApp();
+        _patientApp = new PatientApp();
+    }
 
     public void BtnCadastroClick(ActionEvent actionEvent) throws Exception {
         try {
@@ -35,22 +45,20 @@ public class Ccadastro extends CBase {
             }
 
             if (doc.length() == 11) {
-                PatientApp save = new PatientApp();
                 Patient novoUsuario = new Patient();
                 novoUsuario.setCpfCrm(doc);
                 novoUsuario.setName(nome);
                 novoUsuario.setPassword(senha);
-                save.Add(novoUsuario);
+                _patientApp.add(novoUsuario);
 
                 UserSession.getInstance().setUserLogado(novoUsuario);
                 OpenSimplePage("InfoReceita.fxml");
             } else {
-                MedicApp save = new MedicApp();
                 Medic novoUsuario = new Medic();
                 novoUsuario.setCpfCrm(doc);
                 novoUsuario.setName(nome);
                 novoUsuario.setPassword(senha);
-                save.Add(novoUsuario);
+                _medicApp.add(novoUsuario);
 
                 UserSession.getInstance().setUserLogado(novoUsuario);
                 OpenSimplePage("InfosDoctorView.fxml");

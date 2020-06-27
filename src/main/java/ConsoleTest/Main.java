@@ -20,7 +20,7 @@ public class Main {
         patient.setCpfCrm("11122233300");
         patient.setName("Douglas");
         patient.setPassword("1234");
-        userApp.Add(patient);
+        userApp.add(patient);
         java.util.List<Patient> patientList = userApp.getAll(Patient.class);
 
         System.out.println(patientList.get(0).id);
@@ -31,7 +31,7 @@ public class Main {
         medic.setName("Luis");
         medic.setPassword("1234");
         medic.setPatientList(patientList);
-        medicApp.Add(medic);
+        medicApp.add(medic);
         java.util.List<Medic> medicList = medicApp.getAll(Medic.class);
 
         System.out.println(medicList.get(0).id);
@@ -40,23 +40,23 @@ public class Main {
 
         Medicine medicine = new Medicine();
         medicine.setName("Dramin");
-        medicineApp.Add(medicine);
+        medicineApp.add(medicine);
 
         Medicine medicine2 = new Medicine();
         medicine2.setName("Rivotril");
-        medicineApp.Add(medicine2);
+        medicineApp.add(medicine2);
 
         Medicine medicine3 = new Medicine();
         medicine3.setName("Dorflex");
-        medicineApp.Add(medicine3);
+        medicineApp.add(medicine3);
 
         Medicine medicine4 = new Medicine();
         medicine4.setName("Venlafaxina");
-        medicineApp.Add(medicine4);
+        medicineApp.add(medicine4);
 
         Medicine medicine5 = new Medicine();
         medicine5.setName("Paracetamol");
-        medicineApp.Add(medicine5);
+        medicineApp.add(medicine5);
 
         java.util.List<Medicine> medicineList = medicineApp.getAll(Medicine.class);
 
@@ -69,7 +69,7 @@ public class Main {
         prescription.setMedic(medic);
         prescription.setDateOfInclude(date);
         prescription.setMedicineList(medicineList);
-        prescriptionApp.Add(prescription);
+        prescriptionApp.add(prescription);
         List<Prescription> prescriptionList = prescriptionApp.getAll(Prescription.class);
 
         System.out.println(prescriptionList.get(0).id);

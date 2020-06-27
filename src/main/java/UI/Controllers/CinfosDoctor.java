@@ -1,6 +1,7 @@
 package UI.Controllers;
 
 import Application.*;
+import Application.Interfaces.IMedicApp;
 import Domain.Model.Medicine.Medicine;
 import Domain.Model.Prescription.Prescription;
 import javafx.collections.FXCollections;
@@ -31,14 +32,21 @@ public class CinfosDoctor extends CBase implements Initializable {
     public TextField txtNomeMedicamento;
     @FXML
     public ListView<Medicine> listMedicamento;
-    public MedicApp medicApp = new MedicApp();
-    public PatientApp patientApp = new PatientApp();
-    public MedicineApp medicineApp = new MedicineApp();
-    public PrescriptionApp prescriptionApp = new PrescriptionApp();
+    public MedicApp medicApp;
+    public PatientApp patientApp;
+    public MedicineApp medicineApp;
+    public PrescriptionApp prescriptionApp;
     @FXML
     private Text closeButton;
     private List<Medicine> medicinesList = new ArrayList<>();
     private ObservableList<Medicine> obsMedicines;
+
+    public CinfosDoctor(){
+        medicApp = new MedicApp();
+        patientApp = new PatientApp();
+        medicineApp = new MedicineApp();
+        prescriptionApp = new PrescriptionApp();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,7 +79,7 @@ public class CinfosDoctor extends CBase implements Initializable {
             prescription.setMedicineList(obsMedicines);
             prescription.setDateOfInclude(date);
 
-            prescriptionApp.Add(prescription);
+            prescriptionApp.add(prescription);
             OpenAlert("Sucesso", "Prescrição médica criada", "", Alert.AlertType.CONFIRMATION);
 
         } catch (Exception e) {

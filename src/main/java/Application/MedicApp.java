@@ -12,7 +12,7 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
         _medicRepository = new MedicRepository();
     }
 
-    public Medic medicLogin(Medic medic) throws Exception {
+     public Medic medicLogin(Medic medic) throws Exception {
         Medic sqlMedic = _medicRepository.medicByCRM(medic);
 
         if (sqlMedic == null || !sqlMedic.getPassword().equals(medic.getPassword())) {
@@ -24,10 +24,10 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
     }
 
     @Override
-    public void Add(Medic entity) throws Exception {
+    public void add(Medic entity) throws Exception {
         Medic sqlPacient = _medicRepository.medicByCRM(entity);
         if (sqlPacient == null) {
-            super.Add(entity);
+            super.add(entity);
         } else {
             throw new Exception("Já existe Medico com esse CRM");
         }
