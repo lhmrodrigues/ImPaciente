@@ -45,7 +45,7 @@ public class Cmenu extends CBase {
                 OpenSimplePage("InfosDoctorView.fxml");
             }
         } catch (Exception e) {
-            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
+            OpenAlert("Erro", "Usuário inexistente", "", Alert.AlertType.ERROR);
         }
     }
 

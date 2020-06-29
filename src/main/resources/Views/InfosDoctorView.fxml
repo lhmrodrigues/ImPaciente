@@ -16,7 +16,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Button>
-        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a) {Nome do Doutor}," wrappingWidth="146.77734375">
+        <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr(a)," wrappingWidth="146.77734375">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>

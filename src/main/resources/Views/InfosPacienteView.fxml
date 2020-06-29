@@ -11,7 +11,7 @@
                 <Font size="20.0" />
             </font>
         </Text>
-      <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
+      <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr(a)," wrappingWidth="146.77734375">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -26,7 +26,7 @@
             <Font size="39.0" />
          </font>
       </Text>
-        <Button fx:id="btnSair" layoutX="135.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FF7F50;" text="Sair" textFill="WHITE">
+        <Button fx:id="btnSair" layoutX="135.0" onMouseClicked="#clickedOnBackButton" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FF7F50;" text="Sair" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
