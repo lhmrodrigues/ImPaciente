@@ -62,11 +62,16 @@ public class CinfosDoctor extends CBase implements Initializable {
         try {
             String[] array = txtNomeMedicamento.getText().split("-");
             Medicine medicine = medicineApp.getById(Integer.parseInt(array[0].trim()));
+            if(medicine==null)
+            {
+                OpenAlert("Erro", "Este medicamento não existe", "", Alert.AlertType.ERROR);
+                return;
+            }
             medicinesList.add(medicine);
             obsMedicines = FXCollections.observableArrayList(medicinesList);
             listMedicamento.setItems(obsMedicines);
         } catch (Exception e) {
-            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
+            OpenAlert("Erro", "Não foi possível adicionar o medicamento", "", Alert.AlertType.ERROR);
         }
     }
 
@@ -77,13 +82,18 @@ public class CinfosDoctor extends CBase implements Initializable {
             prescription.setPatient(patientApp.getById(patientApp.getPatientByCPF(txtCPF.getText()).id));
             prescription.setMedic(medicApp.getById(UserSession.getInstance().getUsuarioLogado().id));
             prescription.setMedicineList(obsMedicines);
+            if(obsMedicines==null || obsMedicines.size()==0)
+            {
+                OpenAlert("Atenção", "Não existe nenhum medicamento cadastrado na receita" , "", Alert.AlertType.WARNING);
+                return;
+            }
             prescription.setDateOfInclude(date);
 
             prescriptionApp.add(prescription);
             OpenAlert("Sucesso", "Prescrição médica criada", "", Alert.AlertType.CONFIRMATION);
 
         } catch (Exception e) {
-            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
+            OpenAlert("Erro", "CPF não reconhecido/cadastrado", "", Alert.AlertType.ERROR);
         }
     }
 
@@ -93,7 +103,7 @@ public class CinfosDoctor extends CBase implements Initializable {
             listMedicamento.getItems().remove(medicineSelected);
             medicinesList.remove(medicineSelected);
         } catch (Exception e) {
-            OpenAlert("Erro", e.getMessage(), "", Alert.AlertType.ERROR);
+            OpenAlert("Erro", "Nenhum medicamento pode ser retirado", "", Alert.AlertType.ERROR);
         }
     }
 

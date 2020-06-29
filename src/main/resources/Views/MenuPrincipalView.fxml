@@ -1,47 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="450.0"
-            style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            fx:controller="UI.Controllers.Cmenu">
+
+<AnchorPane prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #A52A2A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.Cmenu">
     <children>
-        <Text fill="WHITE" layoutX="88.0" layoutY="119.0" strokeMiterLimit="80.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="I'm Pacient" textAlignment="CENTER" wrappingWidth="274.0">
+        <Text fill="WHITE" layoutX="88.0" layoutY="119.0" strokeMiterLimit="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm Pacient" textAlignment="CENTER" wrappingWidth="274.0">
             <font>
-                <Font size="48.0"/>
+                <Font size="48.0" />
             </font>
         </Text>
         <Text fill="#ffce54" layoutX="199.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu">
             <font>
-                <Font size="20.0"/>
+                <Font size="20.0" />
             </font>
         </Text>
-        <Button fx:id="btnEntrar" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" onAction="#BtnEntrarClick"
-                prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Entrar"
-                textFill="WHITE">
+        <Button fx:id="btnEntrar" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" onAction="#BtnEntrarClick" prefHeight="40.0" prefWidth="366.0" style="-fx-background-color: #FF7F50;" text="Entrar" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="18.0"/>
+                <Font name="System Bold" size="18.0" />
             </font>
         </Button>
         <Button fx:id="btnCadastrar" layoutX="158.0" layoutY="542.0" onAction="#BtnCadastrarClick" text="Cadastre-se">
             <font>
-                <Font size="20.0"/>
+                <Font size="20.0" />
             </font>
         </Button>
-        <TextField fx:id="txtUsuario" layoutX="42.0" layoutY="193.0" prefHeight="25.0" prefWidth="366.0"
-                   promptText="CPF ou CRM">
+        <TextField fx:id="txtUsuario" layoutX="42.0" layoutY="193.0" prefHeight="25.0" prefWidth="366.0" promptText="CPF ou CRM">
             <font>
-                <Font size="17.0"/>
+                <Font size="17.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtSenha" accessibleRole="PASSWORD_FIELD" layoutX="42.0" layoutY="266.0" prefHeight="25.0"
-                   prefWidth="366.0" promptText="Senha">
-            <font>
-                <Font size="17.0"/>
-            </font>
-        </TextField>
+
+      <PasswordField layoutX="-185.0" layoutY="193.0" />
+      <PasswordField fx:id="txtSenha" layoutX="42.0" layoutY="269.0" prefHeight="38.0" prefWidth="366.0" promptText="Senha">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </PasswordField>
     </children>
 </AnchorPane>
