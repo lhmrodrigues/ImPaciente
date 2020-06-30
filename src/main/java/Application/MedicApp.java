@@ -13,7 +13,7 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
     }
 
      public Medic medicLogin(Medic medic) throws Exception {
-        Medic sqlMedic = _medicRepository.medicByCRM(medic);
+        Medic sqlMedic = _medicRepository.medicByCRM(medic.getCpfCrm());
 
         if (sqlMedic == null || !sqlMedic.getPassword().equals(medic.getPassword())) {
             throw new Exception("CRM e/ou senha inválidos");
@@ -25,7 +25,7 @@ public class MedicApp extends BaseApp<Medic> implements IMedicApp {
 
     @Override
     public void add(Medic entity) throws Exception {
-        Medic sqlPacient = _medicRepository.medicByCRM(entity);
+        Medic sqlPacient = _medicRepository.medicByCRM(entity.getCpfCrm());
         if (sqlPacient == null) {
             super.add(entity);
         } else {

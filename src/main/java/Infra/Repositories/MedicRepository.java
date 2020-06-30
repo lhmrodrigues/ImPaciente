@@ -8,11 +8,11 @@ import org.hibernate.query.Query;
 
 public class MedicRepository extends BaseRepository<Medic> implements IMedicRepository {
 
-    public Medic medicByCRM(Medic medic) {
+    public Medic medicByCRM(String crm) {
         Session session = HibernateContext.getInstance().getSession();
         try {
             Query query = session.createQuery("FROM Medic WHERE cpfCrm = :crm");
-            query.setParameter("crm", medic.getCpfCrm());
+            query.setParameter("crm", crm);
             return (Medic) query.uniqueResult();
         } catch (Exception e) {
             throw e;
