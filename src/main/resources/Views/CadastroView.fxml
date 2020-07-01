@@ -51,10 +51,11 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="txtSenha" accessibleRole="PASSWORD_FIELD" layoutX="24.0" layoutY="326.0" prefHeight="34.0" prefWidth="400.0">
+      <PasswordField layoutX="-185.0" layoutY="193.0" />
+      <PasswordField fx:id="txtSenha" layoutX="24.0" layoutY="326.0" prefHeight="34.0" prefWidth="400.0">
          <font>
             <Font size="15.0" />
          </font>
-      </TextField>
+      </PasswordField>
     </children>
 </AnchorPane>
