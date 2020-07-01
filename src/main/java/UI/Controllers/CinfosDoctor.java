@@ -90,6 +90,7 @@ public class CinfosDoctor extends CBase implements Initializable {
 
             prescriptionApp.add(prescription);
             OpenAlert("Sucesso", "Prescrição médica criada", "", Alert.AlertType.CONFIRMATION);
+            clearFiels();
 
         } catch (Exception e) {
             OpenAlert("Erro", "CPF não reconhecido/cadastrado", "", Alert.AlertType.ERROR);
@@ -109,5 +110,13 @@ public class CinfosDoctor extends CBase implements Initializable {
     public void clickedOnBackButton(MouseEvent mouseEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
+    }
+
+    private void clearFiels(){
+        listMedicamento.getItems().clear();
+        medicinesList = new ArrayList<>();
+        obsMedicines.removeAll();
+        txtCPF.clear();
+        txtNomeMedicamento.clear();
     }
 }

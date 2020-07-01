@@ -15,13 +15,13 @@
         </Text>
         <Button fx:id="btnConfirmar" layoutX="26.0" layoutY="534.0" mnemonicParsing="false"
                 onAction="#BtnConfirmarClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #FF7F50;"
-                text="Confirmar Receita" textFill="WHITE">
+                text="Ver Receita" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="21.0"/>
             </font>
         </Button>
         <Text fill="WHITE" layoutX="25.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Sr(a) {Nome do Paciente}," wrappingWidth="146.77734375">
+              text="Sr(a)," wrappingWidth="146.77734375">
             <font>
                 <Font name="System Bold" size="12.0"/>
             </font>
