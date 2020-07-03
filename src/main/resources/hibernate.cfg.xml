@@ -8,7 +8,7 @@
         <property name="format_sql">true</property>
         <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
-        <property name="connection.url">jdbc:sqlite:mydb.db</property>
+        <property name="connection.url">jdbc:sqlite:./mydb.db</property>
         <property name="connection.username"/>
         <property name="connection.password"/>
 

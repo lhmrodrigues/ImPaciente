@@ -2,6 +2,7 @@ package Infra.Context;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateContext {
@@ -9,7 +10,12 @@ public class HibernateContext {
     private SessionFactory sessionFactory;
 
     public HibernateContext() {
-        sessionFactory = new Configuration().configure().buildSessionFactory();
+        try{
+            sessionFactory = new Configuration().configure().buildSessionFactory();
+        }
+        catch (Exception e){
+            System.out.println("Erro ao procurar o config hibernate " + e.getMessage());
+        }
     }
 
     public static HibernateContext getInstance() {
