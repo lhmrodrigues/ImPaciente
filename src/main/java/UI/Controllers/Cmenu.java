@@ -20,7 +20,7 @@ public class Cmenu extends CBase {
     public void BtnEntrarClick() throws IOException {
 
         try {
-            if (txtUsuario.getText().trim().isEmpty() || txtSenha.getText().trim().isEmpty()) {
+            if (txtUsuario.getText().isBlank() || txtSenha.getText().isBlank()) {
                 OpenAlert("Usuário Inválido", "Usuário e/ou Senha e/ou Nome em Branco", "", Alert.AlertType.WARNING);
                 return;
             }

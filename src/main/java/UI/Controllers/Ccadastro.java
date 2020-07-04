@@ -39,7 +39,7 @@ public class Ccadastro extends CBase {
             String doc = txtCpfCrm.getText();
             String senha = txtSenha.getText();
 
-            if (doc.trim().isEmpty() || senha.trim().isEmpty()  || nome.trim().isEmpty()) {
+            if (doc.isBlank() || senha.isBlank() || nome.isBlank()) {
                 OpenAlert("Usuário Inválido", "Usuário e/ou Senha e/ou Nome em Branco", "", Alert.AlertType.WARNING);
                 return;
             }
